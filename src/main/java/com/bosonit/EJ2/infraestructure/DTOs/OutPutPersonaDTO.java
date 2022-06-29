@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class OutPutPersonaDTO {
-    private Integer id_persona;
+    private String id;
     private String usuario;
     private Integer password;
     private String name;

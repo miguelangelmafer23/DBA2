@@ -5,9 +5,11 @@ import com.bosonit.EJ2.application.port.GetPersonPort;
 import com.bosonit.EJ2.domain.PersonaEnt;
 import com.bosonit.EJ2.infraestructure.DTOs.OutPutPersonaDTO;
 import com.bosonit.EJ2.infraestructure.Repository.PersonaRepository;
+import org.aspectj.weaver.patterns.PerObject;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class GetPersonUseCase implements GetPersonPort {
     @Autowired
     ModelMapper modelMapper;
 
-    public OutPutPersonaDTO getPersonaByID(Integer id) throws Exception
+    public OutPutPersonaDTO getPersonaByID(String id) throws Exception
     {
         PersonaEnt personaEnt = personaRepository.findById(id).orElseThrow(()-> new NotFoundException("Usuario no encontrado")) ;
         OutPutPersonaDTO outPutPersonaDTO = modelMapper.map(personaEnt,OutPutPersonaDTO.class);

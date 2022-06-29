@@ -9,6 +9,6 @@ import java.util.List;
 
 
 @Repository
-public interface PersonaRepository extends MongoRepository<PersonaEnt,Integer> {
+public interface PersonaRepository extends MongoRepository<PersonaEnt,String> {
     List<PersonaEnt> findByName(String name);
 }

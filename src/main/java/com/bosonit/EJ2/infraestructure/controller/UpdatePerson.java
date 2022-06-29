@@ -18,7 +18,7 @@ public class UpdatePerson {
     UpdatePersonaPort updatePersonaPort;
 
     @PutMapping("/update/{id}")
-    public OutPutPersonaDTO updatePersona(@PathVariable Integer id, @RequestBody InputPersonaDTO inputPersonaDTO) throws Exception {
+    public OutPutPersonaDTO updatePersona(@PathVariable String id, @RequestBody InputPersonaDTO inputPersonaDTO) throws Exception {
         return updatePersonaPort.updatePerson(id, inputPersonaDTO);
     }
 }

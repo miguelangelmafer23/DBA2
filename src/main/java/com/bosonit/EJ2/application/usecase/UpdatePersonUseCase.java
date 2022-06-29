@@ -22,14 +22,14 @@ public class UpdatePersonUseCase implements UpdatePersonaPort {
     ModelMapper modelMapper;
 
 
-    public OutPutPersonaDTO updatePerson(Integer id, InputPersonaDTO personaNew) {
+    public OutPutPersonaDTO updatePerson(String id, InputPersonaDTO personaNew) {
 
         if (personaRepository.findById(id).isEmpty()){
             throw new NotFoundException("No se encuenta la persona con el id: " + id);
         }else{
             PersonaEnt personaEnt = modelMapper.map(personaNew, PersonaEnt.class);
             //comprobar
-            personaEnt.setId_persona(id);
+            personaEnt.setId(id);
 
             if (personaEnt.getUsuario().length() > 10) {
                 throw new UnprocesableException("Usuario debe tener menos de 10 caracteres");

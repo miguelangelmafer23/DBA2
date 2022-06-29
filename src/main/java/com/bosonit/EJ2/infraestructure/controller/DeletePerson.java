@@ -19,7 +19,7 @@ public class DeletePerson {
     DeletePersonPort deletePersonPort;
 
     @DeleteMapping("/delete/{id}")
-    public String deletePerson(@PathVariable Integer id) throws Exception {
+    public String deletePerson(@PathVariable String id) throws Exception {
        return  deletePersonPort.deletePerson(id);
     }
 }

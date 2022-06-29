@@ -25,7 +25,7 @@ public class GetPerson {
 
     @GetMapping("/id/{id}")
 
-    public OutPutPersonaDTO getPersonByID(@PathVariable Integer id) throws Exception {
+    public OutPutPersonaDTO getPersonByID(@PathVariable String id) throws Exception {
             return getPersonPort.getPersonaByID(id);
     }
 

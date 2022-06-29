@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface GetPersonPort {
 
-    public OutPutPersonaDTO getPersonaByID(Integer id) throws Exception;
+    public OutPutPersonaDTO getPersonaByID(String id) throws Exception;
 
     public List <OutPutPersonaDTO> getPersonByName(String name);
 

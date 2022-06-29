@@ -6,5 +6,5 @@ import com.bosonit.EJ2.infraestructure.DTOs.OutPutPersonaDTO;
 
 public interface UpdatePersonaPort {
 
-    public OutPutPersonaDTO updatePerson(Integer id, InputPersonaDTO personaNew);
+    public OutPutPersonaDTO updatePerson(String id, InputPersonaDTO personaNew);
 }

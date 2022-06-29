@@ -17,7 +17,7 @@ import java.util.Date;
 public class PersonaEnt {
 
     @Id
-    private Integer id_persona;
+    private String id;
 
     private String usuario;
 

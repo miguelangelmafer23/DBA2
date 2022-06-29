@@ -16,10 +16,12 @@ import org.springframework.stereotype.Service;
 public class CreatePersonUseCase implements CreatePersonPort {
 
     @Autowired
-    PersonaRepository personaRepository;
+    ModelMapper modelMapper;
 
     @Autowired
-    ModelMapper modelMapper;
+    PersonaRepository personaRepository;
+
+
 
     public OutPutPersonaDTO addPersona(InputPersonaDTO inputPersonaDTO) throws Exception{
 

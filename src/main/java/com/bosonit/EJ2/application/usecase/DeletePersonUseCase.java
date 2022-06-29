@@ -6,6 +6,7 @@ import com.bosonit.EJ2.exceptions.NotFoundException;
 import com.bosonit.EJ2.infraestructure.Repository.PersonaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,13 +14,12 @@ public class DeletePersonUseCase implements DeletePersonPort {
 
     @Autowired
     PersonaRepository personaRepository;
-
     @Autowired
     GetPersonUseCase getPersonUseCase;
     @Autowired
     ModelMapper modelMapper;
 
-    public String deletePerson(Integer id){
+    public String deletePerson(String id){
         try {
             PersonaEnt personaEnt = modelMapper.map(getPersonUseCase.getPersonaByID(id) , PersonaEnt.class);
             personaRepository.delete(personaEnt);
